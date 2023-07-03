@@ -1,0 +1,30 @@
+import java.util.Scanner;
+interface Client
+{
+    void input(); // By Default --> Public + abstract
+    void output();
+}
+// Assume that Practise is Indicating the Developer
+class Practise implements Client
+{
+    String name;
+    Double phn;
+    public void input()
+    {
+        Scanner r = new Scanner(System.in);
+        System.out.println("Enter Your Name : ");
+        name = r.nextLine();
+        System.out.println("Enter Your Phone Number : ");
+        phn = r.nextDouble();
+    }
+    public void output() // we have to take a public while Overriding
+    {
+        System.out.println("Name : "+name+"\nPhone Number : "+phn);
+    }
+    public static void main(String arg[])
+    {
+        Client k = new Practise();
+        k.input();
+        k.output();
+    }
+}
